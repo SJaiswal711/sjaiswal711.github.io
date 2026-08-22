@@ -67,21 +67,83 @@ html[data-theme="dark"] {
 }
 
 
-/* Dark-mode base elements */
-html[data-theme="dark"] body {
-  background-color: var(--global-bg-color);
-  color: var(--global-text-color);
+/* ==========================================================================
+   Dark theme variables
+   ========================================================================== */
+
+html[data-theme="dark"] {
+  --global-base-color                 : #8ab4f8;
+  --global-bg-color                   : #111827;
+  --global-footer-bg-color            : #0f172a;
+  --global-border-color               : #374151;
+  --global-dark-border-color          : #4b5563;
+  --global-code-background-color      : #1f2937;
+  --global-code-text-color            : #9ca3af;
+  --global-fig-caption-color          : #9ca3af;
+
+  --global-link-color                 : #93c5fd;
+  --global-link-color-hover           : #bfdbfe;
+  --global-link-color-visited         : #60a5fa;
+
+  --global-masthead-link-color        : #e5e7eb;
+  --global-masthead-link-color-hover  : #8ab4f8;
+
+  --global-text-color                 : #e5e7eb;
+  --global-text-color-light           : #9ca3af;
+
+  --global-thead-color                : #374151;
 }
 
+
+/* ==========================================================================
+   Force dark background
+   ========================================================================== */
+
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] .initial-content,
+html[data-theme="dark"] .page,
+html[data-theme="dark"] .page__content {
+  background-color: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+
+/* ==========================================================================
+   Dark-mode text
+   ========================================================================== */
+
+html[data-theme="dark"] .page__content,
+html[data-theme="dark"] .page__content p,
+html[data-theme="dark"] .page__content li,
+html[data-theme="dark"] .page__content h1,
+html[data-theme="dark"] .page__content h2,
+html[data-theme="dark"] .page__content h3,
+html[data-theme="dark"] .page__content h4,
+html[data-theme="dark"] .page__content h5,
+html[data-theme="dark"] .page__content h6 {
+  color: #e5e7eb !important;
+}
+
+
+/* ==========================================================================
+   Dark-mode links
+   ========================================================================== */
+
 html[data-theme="dark"] a {
-  color: var(--global-link-color);
+  color: #93c5fd;
 }
 
 html[data-theme="dark"] a:hover {
-  color: var(--global-link-color-hover);
+  color: #bfdbfe;
 }
 
-html[data-theme="dark"] footer {
-  color: var(--global-text-color);
-  background-color: var(--global-footer-bg-color);
+
+/* ==========================================================================
+   Dark-mode footer
+   ========================================================================== */
+
+html[data-theme="dark"] .page__footer {
+  background-color: #0f172a !important;
+  color: #e5e7eb !important;
 }
