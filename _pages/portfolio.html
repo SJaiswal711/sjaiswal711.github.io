@@ -7,451 +7,484 @@ author_profile: false
 
 <style>
 
-  /* =========================================================
-     PROJECT PAGE VARIABLES
-     ========================================================= */
+/* =========================================================
+   PROJECT PAGE VARIABLES
+   ========================================================= */
 
-  :root {
-    --port-primary: #2c3e50;
-    --port-text: #3b3b3b;
-    --port-muted: #64748b;
-    --port-bg: #ffffff;
-    --port-card: #fdfdfd;
-    --port-border: #e5e7eb;
-  }
-
-
-  /* =========================================================
-     HEADER
-     Uses the global light/dark theme
-     ========================================================= */
-
-  .masthead,
-  .masthead__inner-wrap,
-  .masthead__menu,
-  .masthead__menu ul,
-  .greedy-nav {
-    background-color: var(--global-bg-color) !important;
-    background: var(--global-bg-color) !important;
-  }
-
-  .masthead {
-    border-bottom: 1px solid var(--global-border-color) !important;
-  }
-
-  .masthead a,
-  .masthead__menu-item,
-  .masthead__menu-item a,
-  .greedy-nav a,
-  .greedy-nav .visible-links,
-  .greedy-nav .visible-links li,
-  .greedy-nav .visible-links a {
-    background: transparent !important;
-    color: var(--global-masthead-link-color) !important;
-  }
-
-  .masthead a:hover,
-  .greedy-nav a:hover {
-    background: transparent !important;
-    color: var(--global-masthead-link-color-hover) !important;
-  }
+:root {
+  --port-primary: #2c3e50;
+  --port-primary-light: #5b7695;
+  --port-text: #3b3b3b;
+  --port-muted: #64748b;
+  --port-bg: #ffffff;
+  --port-card: #fafbfc;
+  --port-border: #e5e7eb;
+  --port-hover: #f8fafc;
+}
 
 
-  /* =========================================================
-     PAGE TITLE
-     ========================================================= */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-  .page__title {
-    color: var(--port-primary) !important;
-    font-weight: 700 !important;
-  }
+.masthead,
+.masthead__inner-wrap,
+.masthead__menu,
+.masthead__menu ul,
+.greedy-nav {
+  background: var(--global-bg-color) !important;
+}
+
+.masthead {
+  border-bottom: 1px solid var(--global-border-color) !important;
+}
+
+.masthead a,
+.masthead__menu-item,
+.masthead__menu-item a,
+.greedy-nav a,
+.greedy-nav .visible-links,
+.greedy-nav .visible-links li,
+.greedy-nav .visible-links a {
+  background: transparent !important;
+  color: var(--global-masthead-link-color) !important;
+}
+
+.masthead a:hover,
+.greedy-nav a:hover {
+  background: transparent !important;
+  color: var(--global-masthead-link-color-hover) !important;
+}
 
 
-  /* =========================================================
-     SECTION TITLES
-     ========================================================= */
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
 
-  .portfolio-section-title {
-    margin: 40px 0 25px;
-
-    padding-bottom: 10px;
-
-    border-bottom: 1px solid var(--port-border);
-
-    color: var(--port-primary) !important;
-
-    font-size: 1.1em !important;
-    font-weight: 700;
-
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
+.page__title {
+  color: var(--port-primary) !important;
+  font-weight: 700 !important;
+}
 
 
-  /* =========================================================
-     TECHNICAL SKILLS
-     ========================================================= */
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
 
+.portfolio-section-title {
+  margin: 42px 0 24px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--port-border);
+
+  color: var(--port-primary) !important;
+
+  font-size: 1.05em !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TECHNICAL SKILLS
+   ========================================================= */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 45px;
+}
+
+.skill-card {
+  padding: 20px 21px 19px;
+
+  background: var(--port-card);
+
+  border: 1px solid var(--port-border);
+  border-radius: 8px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cbd5e1;
+
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.045);
+}
+
+.skill-card-title {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 14px;
+
+  color: var(--port-muted);
+
+  font-size: 0.78em;
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.skill-card-title i {
+  color: var(--port-primary);
+
+  font-size: 0.95em;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  background: var(--port-bg);
+
+  border: 1px solid var(--port-border);
+  border-radius: 5px;
+
+  color: var(--port-text);
+
+  font-size: 0.81em;
+  font-weight: 500;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-1px);
+
+  background: var(--port-hover);
+
+  border-color: #94a3b8;
+
+  color: var(--port-primary);
+}
+
+.skill-badge i {
+  color: var(--port-muted);
+
+  font-size: 0.92em;
+}
+
+.skill-badge img {
+  width: 16px;
+  height: 16px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.story-card {
+  background: var(--port-card);
+
+  border: 1px solid var(--port-border);
+  border-left: 4px solid var(--port-primary);
+
+  border-radius: 9px;
+
+  padding: 30px;
+
+  margin-bottom: 28px;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.025);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 9px 28px rgba(0, 0, 0, 0.05);
+}
+
+.project-title {
+  margin: 0 0 8px;
+
+  color: var(--port-primary) !important;
+
+  font-size: 1.22em;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+.project-meta {
+  margin-bottom: 17px;
+
+  color: var(--port-muted);
+
+  font-size: 0.82em;
+}
+
+.story-hook {
+  margin-bottom: 19px;
+
+  color: var(--port-text);
+
+  font-size: 0.94em;
+
+  line-height: 1.75;
+
+  text-align: justify;
+}
+
+
+/* =========================================================
+   EXPAND BUTTON
+   ========================================================= */
+
+.unfold-prompt {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0;
+
+  background: transparent !important;
+
+  border: none;
+
+  color: #3172b4;
+
+  font-size: 0.87em;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.unfold-prompt:hover {
+  color: var(--port-primary);
+}
+
+.unfold-prompt i {
+  transition: transform 0.3s ease;
+}
+
+.unfold-prompt.open i {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   EXPANDED PROJECT DETAILS
+   ========================================================= */
+
+.journey-container {
+  max-height: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  transition:
+    max-height 0.7s ease,
+    opacity 0.4s ease;
+}
+
+.journey-container.expanded {
+  max-height: 1800px;
+
+  opacity: 1;
+
+  margin-top: 27px;
+  padding-top: 24px;
+
+  border-top: 1px dashed var(--port-border);
+}
+
+.detail-title {
+  margin: 0 0 10px;
+
+  color: var(--port-primary);
+
+  font-size: 0.98em;
+  font-weight: 700;
+}
+
+.detail-list {
+  margin: 0 0 18px;
+}
+
+.detail-list li {
+  margin-bottom: 7px;
+
+  color: var(--port-text);
+
+  line-height: 1.6;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 17px;
+}
+
+.project-tag {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  background: transparent;
+
+  border: 1px solid var(--port-border);
+  border-radius: 4px;
+
+  color: var(--port-muted);
+
+  font-size: 0.76em;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+html[data-theme="dark"] {
+  --port-primary: #9ec5ff;
+  --port-primary-light: #b9d3fa;
+  --port-text: #e5e7eb;
+  --port-muted: #9ca3af;
+  --port-bg: #111827;
+  --port-card: #172033;
+  --port-border: #374151;
+  --port-hover: #1f2937;
+}
+
+html[data-theme="dark"] .skill-card {
+  background: #172033;
+
+  border-color: #374151;
+
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .skill-card:hover {
+  border-color: #4b5563;
+
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] .skill-card-title {
+  color: #9ca3af;
+}
+
+html[data-theme="dark"] .skill-card-title i {
+  color: #9ec5ff;
+}
+
+html[data-theme="dark"] .skill-badge {
+  background: #111827;
+
+  border-color: #374151;
+
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .skill-badge:hover {
+  background: #1f2937;
+
+  border-color: #64748b;
+
+  color: #9ec5ff;
+}
+
+html[data-theme="dark"] .skill-badge i {
+  color: #9ca3af;
+}
+
+html[data-theme="dark"] .story-card {
+  background: #172033;
+
+  border-color: #374151;
+
+  border-left-color: #9ec5ff;
+
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .project-title,
+html[data-theme="dark"] .portfolio-section-title,
+html[data-theme="dark"] .detail-title {
+  color: #9ec5ff !important;
+}
+
+html[data-theme="dark"] .story-hook,
+html[data-theme="dark"] .detail-list li {
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .project-meta,
+html[data-theme="dark"] .project-tag {
+  color: #9ca3af;
+}
+
+html[data-theme="dark"] .project-tag {
+  border-color: #374151;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
   .skills-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    column-gap: 30px;
-    row-gap: 25px;
-
-    margin-bottom: 45px;
+    grid-template-columns: 1fr;
   }
+}
 
-  .skill-category h3 {
-    margin: 0 0 12px;
-
-    padding-bottom: 6px;
-
-    border-bottom: 1px solid var(--port-border);
-
-    color: var(--port-muted) !important;
-
-    font-size: 0.85em;
-    font-weight: 600;
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .badge-container {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-  }
-
-  .skill-badge {
-    display: inline-flex;
-
-    align-items: center;
-
-    padding: 6px 11px;
-
-    background-color: var(--port-bg) !important;
-
-    border: 1px solid var(--port-border) !important;
-
-    border-radius: 4px;
-
-    color: var(--port-text) !important;
-
-    font-size: 0.82em;
-    font-weight: 500;
-
-    transition:
-      transform 0.2s ease,
-      border-color 0.2s ease,
-      color 0.2s ease;
-  }
-
-  .skill-badge img,
-  .skill-badge i {
-    width: 17px;
-    height: 17px;
-
-    margin-right: 8px;
-
-    object-fit: contain;
-
-    filter: grayscale(100%) opacity(70%);
-  }
-
-  .skill-badge:hover {
-    transform: translateY(-1px);
-
-    border-color: var(--port-primary) !important;
-
-    color: var(--port-primary) !important;
-  }
-
-  .skill-badge:hover img,
-  .skill-badge:hover i {
-    filter: grayscale(0%) opacity(100%);
-  }
-
-
-  /* =========================================================
-     PROJECT CARDS
-     ========================================================= */
-
+@media (max-width: 768px) {
   .story-card {
-    background: var(--port-card) !important;
-
-    border: 1px solid var(--port-border) !important;
-
-    border-left: 4px solid var(--port-primary) !important;
-
-    border-radius: 10px;
-
-    padding: 32px;
-
-    margin-bottom: 30px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.025);
-
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
-  }
-
-  .story-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  }
-
-  .project-title {
-    margin: 0 0 10px;
-
-    color: var(--port-primary) !important;
-
-    font-size: 1.25em;
-
-    font-weight: 750;
-
-    line-height: 1.4;
-  }
-
-  .project-meta {
-    margin-bottom: 18px;
-
-    color: var(--port-muted);
-
-    font-size: 0.82em;
+    padding: 23px;
   }
 
   .story-hook {
-    margin-bottom: 20px;
-
-    color: var(--port-text);
-
-    font-size: 0.95em;
-
-    line-height: 1.75;
-
-    text-align: justify;
+    text-align: left;
   }
 
-
-  /* =========================================================
-     EXPAND BUTTON
-     ========================================================= */
-
-  .unfold-prompt {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 0;
-
-    background: transparent !important;
-
-    border: none;
-
-    color: #3172b4;
-
-    font-size: 0.88em;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: color 0.25s ease;
+  .project-title {
+    font-size: 1.1em;
   }
-
-  .unfold-prompt:hover {
-    color: var(--port-primary);
-  }
-
-  .unfold-prompt i {
-    transition: transform 0.3s ease;
-  }
-
-  .unfold-prompt.open i {
-    transform: rotate(180deg);
-  }
-
-
-  /* =========================================================
-     EXPANDED PROJECT DETAILS
-     ========================================================= */
-
-  .journey-container {
-    max-height: 0;
-
-    opacity: 0;
-
-    overflow: hidden;
-
-    transition:
-      max-height 0.7s ease,
-      opacity 0.4s ease;
-  }
-
-  .journey-container.expanded {
-    max-height: 1800px;
-
-    opacity: 1;
-
-    margin-top: 28px;
-
-    padding-top: 25px;
-
-    border-top: 1px dashed var(--port-border);
-  }
-
-  .detail-title {
-    margin: 0 0 10px;
-
-    color: var(--port-primary);
-
-    font-size: 1em;
-
-    font-weight: 700;
-  }
-
-  .detail-list {
-    margin-bottom: 20px;
-  }
-
-  .detail-list li {
-    margin-bottom: 7px;
-
-    color: var(--port-text);
-
-    line-height: 1.6;
-  }
-
-
-  /* =========================================================
-     PROJECT TAGS
-     ========================================================= */
-
-  .project-tags {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-top: 18px;
-  }
-
-  .project-tag {
-    display: inline-block;
-
-    padding: 5px 10px;
-
-    background: transparent;
-
-    border: 1px solid var(--port-border);
-
-    border-radius: 4px;
-
-    color: var(--port-muted);
-
-    font-size: 0.78em;
-  }
-
-
-  /* =========================================================
-     DARK MODE
-     ========================================================= */
-
-  html[data-theme="dark"] {
-    --port-primary: #9ec5ff;
-    --port-text: #e5e7eb;
-    --port-muted: #9ca3af;
-    --port-bg: #111827;
-    --port-card: #172033;
-    --port-border: #374151;
-  }
-
-  html[data-theme="dark"] .skill-badge {
-    background-color: #172033 !important;
-
-    border-color: #374151 !important;
-
-    color: #e5e7eb !important;
-  }
-
-  html[data-theme="dark"] .skill-category h3 {
-    color: #9ca3af !important;
-
-    border-bottom-color: #374151;
-  }
-
-  html[data-theme="dark"] .skill-badge:hover {
-    border-color: #9ec5ff !important;
-
-    color: #9ec5ff !important;
-  }
-
-  html[data-theme="dark"] .story-card {
-    background: #172033 !important;
-
-    border-color: #374151 !important;
-
-    border-left-color: #9ec5ff !important;
-
-    box-shadow: none;
-  }
-
-  html[data-theme="dark"] .project-title,
-  html[data-theme="dark"] .portfolio-section-title,
-  html[data-theme="dark"] .detail-title {
-    color: #9ec5ff !important;
-  }
-
-  html[data-theme="dark"] .story-hook,
-  html[data-theme="dark"] .detail-list li {
-    color: #e5e7eb !important;
-  }
-
-  html[data-theme="dark"] .project-meta,
-  html[data-theme="dark"] .project-tag {
-    color: #9ca3af;
-  }
-
-  html[data-theme="dark"] .project-tag {
-    border-color: #374151;
-  }
-
-
-  /* =========================================================
-     MOBILE
-     ========================================================= */
-
-  @media (max-width: 850px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-
-      row-gap: 20px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .story-card {
-      padding: 24px;
-    }
-
-    .story-hook {
-      text-align: left;
-    }
-
-    .project-title {
-      font-size: 1.12em;
-    }
-  }
+}
 
 </style>
 
@@ -466,255 +499,153 @@ author_profile: false
 
 <div class="skills-grid">
 
-  <!-- LEFT COLUMN -->
-  <div>
+  <!-- Programming & Computing -->
+  <div class="skill-card">
 
-    <div class="skill-category">
-      <h3>Programming Languages</h3>
-
-      <div class="badge-container">
-
-        <div class="skill-badge">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-            alt="Python"
-          >
-          Python
-        </div>
-
-        <div class="skill-badge">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-            alt="C++"
-          >
-          C/C++
-        </div>
-
-        <div class="skill-badge">
-          MATLAB
-        </div>
-
-        <div class="skill-badge">
-          Fortran
-        </div>
-
-        <div class="skill-badge">
-          R
-        </div>
-
-      </div>
+    <div class="skill-card-title">
+      <i class="fas fa-code"></i>
+      Programming &amp; Computing
     </div>
 
+    <div class="skill-badges">
 
-    <div class="skill-category" style="margin-top: 25px;">
+      <span class="skill-badge">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          alt="Python"
+        >
+        Python
+      </span>
 
-      <h3>Scientific Computing &amp; HPC</h3>
+      <span class="skill-badge">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+          alt="C/C++"
+        >
+        C/C++
+      </span>
 
-      <div class="badge-container">
+      <span class="skill-badge">MATLAB</span>
+      <span class="skill-badge">Fortran</span>
+      <span class="skill-badge">R</span>
 
-        <div class="skill-badge">
-          <i class="fas fa-server"></i>
-          Linux
-        </div>
+      <span class="skill-badge">
+        <i class="fas fa-server"></i>
+        Linux
+      </span>
 
-        <div class="skill-badge">
-          <i class="fas fa-microchip"></i>
-          HPC
-        </div>
+      <span class="skill-badge">
+        <i class="fas fa-microchip"></i>
+        HPC
+      </span>
 
-        <div class="skill-badge">
-          <i class="fas fa-network-wired"></i>
-          MPI
-        </div>
+      <span class="skill-badge">
+        <i class="fas fa-network-wired"></i>
+        MPI
+      </span>
 
-        <div class="skill-badge">
-          OpenMP
-        </div>
+      <span class="skill-badge">OpenMP</span>
+      <span class="skill-badge">SLURM</span>
+      <span class="skill-badge">Bash</span>
 
-        <div class="skill-badge">
-          SLURM
-        </div>
+      <span class="skill-badge">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+          alt="Git"
+        >
+        Git
+      </span>
 
-        <div class="skill-badge">
-          Bash
-        </div>
-
-        <div class="skill-badge">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-            alt="Git"
-          >
-          Git
-        </div>
-
-      </div>
     </div>
-
-
-    <div class="skill-category" style="margin-top: 25px;">
-
-      <h3>Statistics &amp; Inference</h3>
-
-      <div class="badge-container">
-
-        <div class="skill-badge">
-          <i class="fas fa-chart-line"></i>
-          Bayesian Inference
-        </div>
-
-        <div class="skill-badge">
-          MCMC
-        </div>
-
-        <div class="skill-badge">
-          Statistical Analysis
-        </div>
-
-        <div class="skill-badge">
-          Hypothesis Testing
-        </div>
-
-        <div class="skill-badge">
-          Numerical Methods
-        </div>
-
-      </div>
-    </div>
-
   </div>
 
 
-  <!-- RIGHT COLUMN -->
-  <div>
+  <!-- Machine Learning & Data -->
+  <div class="skill-card">
 
-    <div class="skill-category">
-
-      <h3>Libraries &amp; Frameworks</h3>
-
-      <div class="badge-container">
-
-        <div class="skill-badge">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
-            alt="PyTorch"
-          >
-          PyTorch
-        </div>
-
-        <div class="skill-badge">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-            alt="TensorFlow"
-          >
-          TensorFlow
-        </div>
-
-        <div class="skill-badge">
-          NumPy
-        </div>
-
-        <div class="skill-badge">
-          SciPy
-        </div>
-
-        <div class="skill-badge">
-          Pandas
-        </div>
-
-        <div class="skill-badge">
-          scikit-learn
-        </div>
-
-      </div>
+    <div class="skill-card-title">
+      <i class="fas fa-brain"></i>
+      Machine Learning &amp; Data
     </div>
 
+    <div class="skill-badges">
 
-    <div class="skill-category" style="margin-top: 25px;">
+      <span class="skill-badge">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+          alt="PyTorch"
+        >
+        PyTorch
+      </span>
 
-      <h3>Machine Learning</h3>
+      <span class="skill-badge">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+          alt="TensorFlow"
+        >
+        TensorFlow
+      </span>
 
-      <div class="badge-container">
+      <span class="skill-badge">NumPy</span>
+      <span class="skill-badge">SciPy</span>
+      <span class="skill-badge">Pandas</span>
+      <span class="skill-badge">scikit-learn</span>
 
-        <div class="skill-badge">
-          <i class="fas fa-brain"></i>
-          CNNs
-        </div>
+      <span class="skill-badge">CNNs</span>
+      <span class="skill-badge">U-Net</span>
+      <span class="skill-badge">GANs</span>
+      <span class="skill-badge">PINNs</span>
 
-        <div class="skill-badge">
-          U-Net
-        </div>
+    </div>
+  </div>
 
-        <div class="skill-badge">
-          GANs
-        </div>
 
-        <div class="skill-badge">
-          PINNs
-        </div>
+  <!-- Statistics & Inference -->
+  <div class="skill-card">
 
-      </div>
+    <div class="skill-card-title">
+      <i class="fas fa-chart-line"></i>
+      Statistics &amp; Inference
     </div>
 
+    <div class="skill-badges">
 
-    <div class="skill-category" style="margin-top: 25px;">
+      <span class="skill-badge">
+        <i class="fas fa-chart-line"></i>
+        Bayesian Inference
+      </span>
 
-      <h3>Cosmology &amp; Astrophysics</h3>
+      <span class="skill-badge">MCMC</span>
+      <span class="skill-badge">Statistical Analysis</span>
+      <span class="skill-badge">Hypothesis Testing</span>
+      <span class="skill-badge">Numerical Methods</span>
 
-      <div class="badge-container">
+    </div>
+  </div>
 
-        <div class="skill-badge">
-          CAMB
-        </div>
 
-        <div class="skill-badge">
-          CLASS
-        </div>
+  <!-- Cosmology & Astrophysics -->
+  <div class="skill-card">
 
-        <div class="skill-badge">
-          HEALPix / healpy
-        </div>
-
-        <div class="skill-badge">
-          Astropy
-        </div>
-
-        <div class="skill-badge">
-          XSPEC
-        </div>
-
-        <div class="skill-badge">
-          SAS
-        </div>
-
-        <div class="skill-badge">
-          HEASoft
-        </div>
-
-      </div>
+    <div class="skill-card-title">
+      <i class="fas fa-globe"></i>
+      Cosmology &amp; Astrophysics
     </div>
 
+    <div class="skill-badges">
 
-    <div class="skill-category" style="margin-top: 25px;">
+      <span class="skill-badge">CAMB</span>
+      <span class="skill-badge">CLASS</span>
+      <span class="skill-badge">HEALPix / healpy</span>
+      <span class="skill-badge">Astropy</span>
+      <span class="skill-badge">XSPEC</span>
+      <span class="skill-badge">SAS</span>
+      <span class="skill-badge">HEASoft</span>
+      <span class="skill-badge">GSL</span>
+      <span class="skill-badge">LAPACK</span>
+      <span class="skill-badge">CFITSIO</span>
 
-      <h3>Scientific Libraries</h3>
-
-      <div class="badge-container">
-
-        <div class="skill-badge">
-          GSL
-        </div>
-
-        <div class="skill-badge">
-          LAPACK
-        </div>
-
-        <div class="skill-badge">
-          CFITSIO
-        </div>
-
-      </div>
     </div>
-
   </div>
 
 </div>
@@ -765,6 +696,7 @@ author_profile: false
     </div>
 
     <ul class="detail-list">
+
       <li>
         Refined and validated the SCoPE MCMC framework.
       </li>
@@ -788,6 +720,7 @@ author_profile: false
       <li>
         Worked with MPI and scientific libraries in Linux/HPC environments.
       </li>
+
     </ul>
 
     <div class="project-tags">
@@ -839,6 +772,7 @@ author_profile: false
     </div>
 
     <ul class="detail-list">
+
       <li>
         Generated multi-frequency CMB temperature and E-mode simulations.
       </li>
@@ -862,6 +796,7 @@ author_profile: false
       <li>
         Studied foreground removal and beam deconvolution.
       </li>
+
     </ul>
 
     <div class="project-tags">
@@ -912,6 +847,7 @@ author_profile: false
     </div>
 
     <ul class="detail-list">
+
       <li>
         Studied field-level Bayesian inference for weak lensing.
       </li>
@@ -931,6 +867,7 @@ author_profile: false
       <li>
         Compared reconstructed dark-matter mass maps.
       </li>
+
     </ul>
 
     <div class="project-tags">
@@ -979,6 +916,7 @@ author_profile: false
     </div>
 
     <ul class="detail-list">
+
       <li>
         How does the planetary radius distribution vary with binary separation?
       </li>
@@ -994,6 +932,7 @@ author_profile: false
       <li>
         Can probabilistic treatment of binary hosts alter the inferred radius gap?
       </li>
+
     </ul>
 
     <div class="project-tags">
@@ -1042,6 +981,7 @@ author_profile: false
     </div>
 
     <ul class="detail-list">
+
       <li>
         Generated synthetic transit datasets.
       </li>
@@ -1061,6 +1001,7 @@ author_profile: false
       <li>
         Investigated anomalous transit signatures and complex transiting structures.
       </li>
+
     </ul>
 
     <div class="project-tags">
@@ -1109,6 +1050,7 @@ author_profile: false
     </div>
 
     <ul class="detail-list">
+
       <li>
         Performed broadband X-ray spectral analysis.
       </li>
@@ -1128,6 +1070,7 @@ author_profile: false
       <li>
         Investigated X-ray emission and accretion processes.
       </li>
+
     </ul>
 
     <div class="project-tags">
@@ -1143,30 +1086,30 @@ author_profile: false
 
 <script>
 
-  function toggleProject(id, button) {
+function toggleProject(id, button) {
 
-    const container = document.getElementById(id);
+  const container = document.getElementById(id);
 
-    if (container.classList.contains("expanded")) {
+  if (container.classList.contains("expanded")) {
 
-      container.classList.remove("expanded");
+    container.classList.remove("expanded");
 
-      button.classList.remove("open");
+    button.classList.remove("open");
 
-      button.innerHTML =
-        'Explore the project <i class="fas fa-chevron-down"></i>';
+    button.innerHTML =
+      'Explore the project <i class="fas fa-chevron-down"></i>';
 
-    } else {
+  } else {
 
-      container.classList.add("expanded");
+    container.classList.add("expanded");
 
-      button.classList.add("open");
+    button.classList.add("open");
 
-      button.innerHTML =
-        'Collapse the project <i class="fas fa-chevron-up"></i>';
-
-    }
+    button.innerHTML =
+      'Collapse the project <i class="fas fa-chevron-up"></i>';
 
   }
+
+}
 
 </script>
