@@ -5,6 +5,7 @@
 .masthead {
   position: fixed;
   background: var(--global-bg-color);
+  color: var(--global-text-color);
   height: fit-content;
   top: 0;
   width: 100%;
@@ -40,6 +41,11 @@
 
     a {
       text-decoration: none;
+      color: var(--global-text-color);
+    }
+
+    a:hover {
+      color: var(--global-link-color);
     }
   }
 }
@@ -56,6 +62,7 @@
 
 .masthead__menu-item {
   background-color: var(--global-bg-color);
+  color: var(--global-text-color);
   display: block;
   list-style-type: none;
   white-space: nowrap;
@@ -70,12 +77,11 @@
   color: var(--global-text-color);
   font-weight: 700;
   border-bottom: 2px solid var(--global-text-color);
-  pointer-events: none; /* Move this here */
-  cursor: default; /* Move this here too */
+  pointer-events: none;
+  cursor: default;
 }
 
 .masthead__menu-item.selected a:hover {
   color: var(--global-text-color);
   border-bottom: 2px solid var(--global-text-color);
-  /* No need to repeat pointer-events and cursor here */
 }
