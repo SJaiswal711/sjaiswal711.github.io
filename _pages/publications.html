@@ -6,293 +6,405 @@ author_profile: false
 ---
 
 <style>
-  /* =========================================
-     1. STATIC LIGHT THEME VARIABLES (Locked)
-     ========================================= */
+
+  /* =========================================================
+     PUBLICATIONS PAGE VARIABLES
+     ========================================================= */
+
   :root {
-    --port-primary: #2c3e50;    /* Dark Academic Blue */
-    --port-text: #3b3b3b;       /* Dark Gray for readability */
-    --port-muted: #64748b;      /* Muted gray for subtitles */
-    --port-bg: #fdfdfd;         /* Almost white for cards */
-    --port-border: #eaeaea;     /* Light gray borders */
+    --pub-primary: #2c3e50;
+    --pub-text: #3b3b3b;
+    --pub-muted: #64748b;
+    --pub-bg: #ffffff;
+    --pub-card: #fafbfc;
+    --pub-border: #e5e7eb;
+    --pub-link: #3172b4;
   }
 
-  /* =========================================
-     2. GLOBAL HEADER FIXES (Matches Portfolio)
-     ========================================= */
-  .masthead, 
-  .masthead__inner-wrap, 
-  .masthead__menu, 
-  .masthead__menu ul, 
+
+  /* =========================================================
+     HEADER
+     ========================================================= */
+
+  .masthead,
+  .masthead__inner-wrap,
+  .masthead__menu,
+  .masthead__menu ul,
   .greedy-nav {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-  }
-  
-  .masthead {
-    border-bottom: 1px solid var(--port-border) !important;
+    background: var(--global-bg-color) !important;
   }
 
-  .masthead a, 
+  .masthead {
+    border-bottom: 1px solid var(--global-border-color) !important;
+  }
+
+  .masthead a,
   .masthead__menu-item,
   .masthead__menu-item a,
-  .greedy-nav a, 
+  .greedy-nav a,
   .greedy-nav .visible-links,
   .greedy-nav .visible-links li,
   .greedy-nav .visible-links a {
-    background-color: transparent !important;
     background: transparent !important;
-    color: var(--port-text) !important;
+    color: var(--global-masthead-link-color) !important;
   }
 
   .masthead a:hover,
-  .greedy-nav a:hover,
-  .greedy-nav .visible-links a:hover,
-  .greedy-nav .visible-links li.masthead__menu-item--current a,
-  .greedy-nav .visible-links li.masthead__menu-item--current a:hover {
-    background-color: transparent !important;
+  .greedy-nav a:hover {
     background: transparent !important;
-    color: var(--port-primary) !important;
+    color: var(--global-masthead-link-color-hover) !important;
   }
 
-  h1.page__title, .page__title {
-    color: var(--port-primary) !important;
+
+  /* =========================================================
+     PAGE TITLE
+     ========================================================= */
+
+  .page__title {
+    color: var(--pub-primary) !important;
     font-weight: 700 !important;
   }
 
-  /* Collaboration Alert */
-  .collab-box {
-    background-color: var(--accent-color);
-    border-left: 4px solid var(--port-primary);
-    padding: 14px 18px;
-    font-size: 0.95em;
-    color: var(--port-primary);
-    font-weight: 500;
-    margin: 30px 0;
-    border-radius: 0 4px 4px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+
+  /* =========================================================
+     SECTION TITLES
+     ========================================================= */
+
+  .pub-section-title {
+    margin: 42px 0 24px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--pub-border);
+
+    color: var(--pub-primary);
+
+    font-size: 1.05em;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+
+  /* =========================================================
+     PUBLICATION CARD
+     ========================================================= */
+
+  .publication-card {
+    background: var(--pub-card);
+
+    border: 1px solid var(--pub-border);
+    border-left: 4px solid var(--pub-primary);
+
+    border-radius: 9px;
+
+    padding: 25px 28px;
+
+    margin-bottom: 28px;
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .publication-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.045);
+  }
+
+
+  /* =========================================================
+     TITLE
+     ========================================================= */
+
+  .paper-title {
+    margin: 0 0 10px;
+
+    color: var(--pub-primary);
+
+    font-size: 1.12em;
+    font-weight: 700;
+
+    line-height: 1.45;
+  }
+
+
+  /* =========================================================
+     AUTHORS
+     ========================================================= */
+
+  .authors-list {
+    margin-bottom: 10px;
+
+    color: var(--pub-muted);
+
+    font-size: 0.9em;
+
     line-height: 1.6;
   }
 
-  /* =========================================
-     3. PUBLICATIONS LAYOUT STYLES
-     ========================================= */
-  .pub-section-title {
-    margin-top: 45px; 
-    border-bottom: 1px solid var(--port-border); 
-    padding-bottom: 8px; 
-    text-transform: uppercase; 
-    color: var(--port-primary); 
-    font-size: 1.15em !important; 
-    font-weight: 700;
-    letter-spacing: 0.1em;
+
+  /* =========================================================
+     VENUE / STATUS
+     ========================================================= */
+
+  .paper-venue {
+    margin-bottom: 16px;
+
+    color: var(--pub-text);
+
+    font-size: 0.88em;
+    line-height: 1.6;
   }
 
-  .pub-list { 
-    line-height: 1.6; 
-    margin-bottom: 40px; 
-    font-size: 0.95em; 
-    color: var(--port-text); 
-    padding-left: 20px; 
-  }
-  .pub-list li { 
-    margin-bottom: 35px; 
-    padding-left: 5px; 
-  }
-  
-  .paper-title { 
-    font-weight: 700; 
-    color: var(--port-primary); 
-    display: block; 
-    margin: 0 0 6px 0; 
-    font-size: 1.05em; 
-    line-height: 1.4;
-  }
-
-  .authors-list { 
-    font-size: 0.9em; 
-    color: var(--port-muted); 
-    margin-bottom: 12px; 
-  }
-
-  /* Interactive Toolbar */
-  .paper-meta { 
-    display: flex; 
-    flex-wrap: wrap; 
-    align-items: center; 
-    gap: 10px; 
-    margin-top: 8px; 
-  }
-
-  .meta-btn, .impact-badge {
-    cursor: pointer; 
-    font-size: 0.75em; 
-    font-weight: 600; 
-    border-radius: 4px;
-    padding: 4px 10px;
-    transition: all 0.2s ease; 
+  .status-badge {
     display: inline-block;
-    letter-spacing: 0.03em;
+
+    margin-right: 8px;
+    padding: 4px 9px;
+
+    background: var(--pub-primary);
+
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-size: 0.74em;
+    font-weight: 600;
   }
 
-  /* Toolbar Button Styles */
-  .venue-btn { background-color: var(--port-primary); color: #ffffff; border: 1px solid var(--port-primary); }
-  .impact-badge { background-color: var(--port-bg); color: var(--port-primary); border: 1px solid var(--port-border); cursor: default; }
-  .doi-btn { background-color: #f0f7ff; color: #3172b4; border: 1px solid #d0e3f7; }
-  .abstract-btn { background-color: var(--port-bg); color: var(--port-muted); border: 1px solid var(--port-border); text-transform: uppercase; }
-  .abstract-btn:hover { background-color: var(--port-primary); color: #ffffff; border-color: var(--port-primary); }
+  .manuscript-badge {
+    display: inline-block;
 
-  /* Info Boxes (Abstract Dropdowns) */
-  .info-box {
-    display: none; 
-    margin-top: 15px; 
-    font-size: 0.95em; 
-    padding: 16px 20px;
-    background: var(--port-bg); 
-    border-left: 3px solid var(--port-primary); 
-    border-radius: 0 4px 4px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03); 
-    border-top: 1px solid var(--port-border);
-    border-right: 1px solid var(--port-border);
-    border-bottom: 1px solid var(--port-border);
-  }
-  
-  .info-box p { 
-    text-align: justify !important; 
-    text-justify: inter-word !important;
-    line-height: 1.7 !important;
-    margin: 0 0 12px 0; 
-    color: var(--port-text);
-  }
-  .info-box p:last-child { margin-bottom: 0; }
-  .badge-wrap { display: inline-block; vertical-align: middle; margin-top: -2px; }
+    margin-bottom: 14px;
+    padding: 4px 9px;
 
-  @media (max-width: 768px) { 
-    .pub-list { font-size: 0.95em; padding-left: 15px; } 
-    .pub-list li { margin-bottom: 30px; }
-    .paper-title { font-size: 1em; }
-    .meta-btn, .impact-badge { padding: 4px 8px; font-size: 0.7em; }
-    .info-box { padding: 14px 16px; }
+    background: #f1f5f9;
+
+    border: 1px solid var(--pub-border);
+    border-radius: 4px;
+
+    color: var(--pub-muted);
+
+    font-size: 0.74em;
+    font-weight: 600;
   }
+
+
+  /* =========================================================
+     LINKS
+     ========================================================= */
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .publication-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 11px;
+
+    background: transparent;
+
+    border: 1px solid var(--pub-border);
+    border-radius: 4px;
+
+    color: var(--pub-link);
+
+    font-size: 0.78em;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+  }
+
+  .publication-link:hover {
+    background: var(--pub-primary);
+
+    border-color: var(--pub-primary);
+
+    color: #ffffff !important;
+  }
+
+
+  /* =========================================================
+     DARK MODE
+     ========================================================= */
+
+  html[data-theme="dark"] {
+    --pub-primary: #9ec5ff;
+    --pub-text: #e5e7eb;
+    --pub-muted: #9ca3af;
+    --pub-bg: #111827;
+    --pub-card: #172033;
+    --pub-border: #374151;
+    --pub-link: #9ec5ff;
+  }
+
+  html[data-theme="dark"] .publication-card {
+    background: #172033;
+
+    border-color: #374151;
+    border-left-color: #9ec5ff;
+
+    box-shadow: none;
+  }
+
+  html[data-theme="dark"] .paper-title {
+    color: #9ec5ff;
+  }
+
+  html[data-theme="dark"] .authors-list {
+    color: #9ca3af;
+  }
+
+  html[data-theme="dark"] .paper-venue {
+    color: #e5e7eb;
+  }
+
+  html[data-theme="dark"] .status-badge {
+    background: #315477;
+  }
+
+  html[data-theme="dark"] .manuscript-badge {
+    background: #1f2937;
+
+    border-color: #374151;
+
+    color: #9ca3af;
+  }
+
+  html[data-theme="dark"] .publication-link {
+    border-color: #374151;
+
+    color: #9ec5ff;
+  }
+
+  html[data-theme="dark"] .publication-link:hover {
+    background: #9ec5ff;
+
+    border-color: #9ec5ff;
+
+    color: #111827 !important;
+  }
+
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
+  @media (max-width: 768px) {
+
+    .publication-card {
+      padding: 21px;
+    }
+
+    .paper-title {
+      font-size: 1.03em;
+    }
+
+  }
+
 </style>
 
-{% if site.author.googlescholar %}
-  <div class="collab-box" style="background-color: #f8fbfd;">
-    You can also find my articles with the latest citations on <a href="#" style="color:#3172b4; text-decoration:underline; font-weight:600;">my Google Scholar profile</a>.
+
+<!-- =========================================================
+     PUBLICATIONS
+     ========================================================= -->
+
+<div class="pub-section-title">
+  Publications
+</div>
+
+
+<div class="publication-card">
+
+  <h3 class="paper-title">
+    Deep Learning for CMB Foreground Removal and Beam Deconvolution:
+    A U-Net GAN Approach
+  </h3>
+
+  <div class="authors-list">
+    <strong>Obasho M</strong>,
+    <strong>Shambhavi Jaiswal</strong>,
+    Santanu Das,
+    Krishna Mohan Parattu
   </div>
-{% endif %}
 
-{% include base_path %}
+  <div class="paper-venue">
 
-<h2 class="pub-section-title">Journal Articles</h2>
-<ol class="pub-list">
-  
-  <li>
-    <span class="paper-title">Predictive Modeling of Urban Heat Islands using CNNs and Multispectral Satellite Imagery.</span>
-    <div class="authors-list">Doe, J., Smith, A., Johnson, R., and Taylor, M., (2024).</div>
-    <div class="paper-meta">
-      <span class="meta-btn venue-btn" data-full="Journal of Environmental Informatics, 42(3), pp.112-134.">JEI '24</span>
-      <span class="impact-badge">Peer-Reviewed</span>
-      <span class="meta-btn abstract-btn">Abstract</span>
-      <span class="meta-btn doi-btn" data-full="#">DOI</span>
-    </div>
-    <div class="info-box details-info"></div>
-    <div class="info-box abstract-info">
-      <p>As metropolitan areas continue to expand globally, the Urban Heat Island (UHI) effect poses an increasing threat to public health and energy consumption. Traditional methods of mapping UHIs rely heavily on sparse networks of ground-based weather stations, often failing to capture highly localized temperature spikes.</p>
-      <p>This study introduces a novel approach using a custom ResNet-based Convolutional Neural Network (CNN) to analyze 500GB of multispectral Landsat imagery. By integrating thermal bands with high-resolution digital elevation models, our architecture extracts complex spatial features, including the impact of building shadows and localized vegetation indices.</p>
-      <p>Experimental results demonstrate that our deep learning model successfully predicts localized temperature variances down to a 30-meter resolution. The proposed CNN architecture outperformed baseline linear regression models by a significant margin, achieving an overall predictive accuracy of <strong>88.4%</strong> and demonstrating robust capabilities in forecasting dangerous heat events 48 hours in advance.</p>
-    </div>
-  </li>
+    <span class="status-badge">
+      Accepted
+    </span>
 
-  <li>
-    <span class="paper-title">Evaluating the Impact of Green Corridors on Microclimate Temperatures: A Data-Driven Approach.</span>
-    <div class="authors-list">Smith, A., Doe, J., and Williams, C., (2023).</div>
-    <div class="paper-meta">
-      <span class="meta-btn venue-btn" data-full="Sustainable Cities and Society, 85, 104052.">SCS '23</span>
-      <span class="impact-badge">Elsevier</span>
-      <span class="meta-btn abstract-btn">Abstract</span>
-      <span class="meta-btn doi-btn" data-full="#">DOI</span>
-    </div>
-    <div class="info-box details-info"></div>
-    <div class="info-box abstract-info">
-      <p>Mitigating urban heat requires strategic urban planning, specifically the deployment of green infrastructure. While the cooling effect of urban parks is well-documented, the micro-climatic impact of continuous "green corridors" (connected networks of street trees and vegetation) remains under-analyzed.</p>
-      <p>This paper presents a comprehensive data-driven analysis using a multi-year dataset of surface temperature readings and vegetation indices across three major metropolitan areas. We employ gradient boosting algorithms (XGBoost and LightGBM) to isolate the cooling effect of continuous canopy cover from confounding variables such as proximity to water bodies and building density.</p>
-      <p>Our findings indicate that continuous green corridors are <strong>up to 35% more effective</strong> at reducing ambient temperatures in high-density commercial zones compared to isolated parks of equivalent total area. These insights provide actionable guidelines for city planners aiming to optimize tree-planting initiatives for maximum thermal comfort.</p>
-    </div>
-  </li>
-</ol>
+    <em>
+      Journal of Cosmology and Astroparticle Physics (JCAP)
+    </em>
 
-<h2 class="pub-section-title">Conference Proceedings</h2>
-<ol class="pub-list">
-  
-  <li>
-    <span class="paper-title">A Deep Learning Framework for Real-time Urban Canopy Mapping.</span>
-    <div class="authors-list">Doe, J., and Johnson, R., (2025).</div>
-    <div class="paper-meta">
-      <span class="meta-btn venue-btn" data-full="2025 International Conference on Climate Informatics, Berlin, Germany.">ICCI '25</span>
-      <span class="impact-badge">IEEE Xplore</span>
-      <span class="meta-btn abstract-btn">Abstract</span>
-      <span class="meta-btn doi-btn" data-full="#">DOI</span>
-    </div>
-    <div class="info-box details-info"></div>
-    <div class="info-box abstract-info">
-      <p>Accurate mapping of the urban tree canopy is essential for assessing a city's resilience to climate change. Traditional classification of aerial imagery is computationally expensive and often requires significant manual correction.</p>
-      <p>We propose a lightweight, real-time deep learning framework utilizing a modified U-Net architecture optimized for edge computing. By employing a combination of spatial attention mechanisms and transfer learning from pre-trained environmental models, our framework significantly reduces inference time while maintaining high segmentation accuracy.</p>
-      <p>Evaluated on the benchmark UrbanNav dataset, our model achieved a Mean Intersection over Union (mIoU) of <strong>0.82</strong>, operating at 45 frames per second on standard commercial hardware. This framework provides municipalities with a cost-effective tool for continuous environmental monitoring.</p>
-    </div>
-  </li>
-</ol>
+    · 2025
 
-<h2 class="pub-section-title">Book Chapters</h2>
-<ol class="pub-list">
-  <li>
-    <span class="paper-title">The Role of Artificial Intelligence in Climate Adaptation Strategies.</span>
-    <div class="authors-list">Taylor, M., Doe, J., (2023).</div>
-    <div class="paper-meta">
-      <span class="meta-btn venue-btn" data-full="Handbook of Computational Sustainability, Springer.">Springer '23</span>
-      <span class="impact-badge">Springer</span>
-      <span class="meta-btn abstract-btn">Summary</span>
-      <span class="meta-btn doi-btn" data-full="#">DOI</span>
-    </div>
-    <div class="info-box details-info"></div>
-    <div class="info-box abstract-info">
-      <p><strong>Chapter Summary:</strong> This chapter provides a comprehensive overview of how machine learning and artificial intelligence are being deployed to address critical challenges in climate adaptation. We explore specific use cases ranging from precision agriculture and water resource management to the prediction of extreme weather events.</p>
-      <p>A significant portion of the chapter focuses on the transition from reactive disaster response to predictive modeling. We detail the foundational algorithms used in environmental data science, including time-series forecasting and spatial-temporal neural networks, emphasizing the importance of open data initiatives in accelerating global sustainability efforts.</p>
-    </div>
-  </li>
-</ol>
+  </div>
 
-<h2 class="pub-section-title">Under Review</h2>
-<ul class="pub-list" style="list-style-type: square; padding-left: 20px;">
-  <li><span style="color: var(--port-muted); font-style: italic;">"Temporal Dynamics of Urban Heat Islands: A Five-Year Longitudinal Study" (Submitted to Nature Climate Change)</span></li>
-</ul>
+  <div class="publication-links">
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.meta-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const parent = this.closest('li');
-        const detailsBox = parent.querySelector('.details-info');
-        const abstractBox = parent.querySelector('.abstract-info');
-        
-        if (this.classList.contains('venue-btn') || this.classList.contains('doi-btn')) {
-          abstractBox.style.display = "none";
-          const isDoi = this.classList.contains('doi-btn');
-          const content = this.getAttribute('data-full');
-          const html = isDoi ? `<strong>Link:</strong> <a href="${content}" target="_blank" style="color:#3172b4; text-decoration:underline;">${content}</a>` : `<strong>Venue:</strong> ${content}`;
-          
-          if (detailsBox.style.display === "block" && detailsBox.innerHTML === html) {
-            detailsBox.style.display = "none";
-          } else {
-            detailsBox.innerHTML = html;
-            detailsBox.style.display = "block";
-          }
-        } 
-        else if (this.classList.contains('abstract-btn')) {
-          detailsBox.style.display = "none";
-          abstractBox.style.display = (abstractBox.style.display === "block") ? "none" : "block";
-        }
-      });
-    });
-  });
-</script>
+    <a
+      class="publication-link"
+      href="https://arxiv.org/abs/2509.00139"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fas fa-file-alt"></i>
+      arXiv
+    </a>
+
+    <a
+      class="publication-link"
+      href="https://inspirehep.net/literature?q=arXiv:2509.00139"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fas fa-external-link-alt"></i>
+      INSPIRE-HEP
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     MANUSCRIPT IN PREPARATION
+     ========================================================= -->
+
+<div class="pub-section-title">
+  Manuscripts in Preparation
+</div>
+
+
+<div class="publication-card">
+
+  <h3 class="paper-title">
+    Machine Learning to Predict the Shadow Image of the
+    Transiting Object from its Transit Light Curve
+  </h3>
+
+  <div class="authors-list">
+    Vikram Khaire,
+    Gitika Shukla,
+    <strong>Shambhavi Jaiswal</strong>,
+    Obasho M
+  </div>
+
+  <span class="manuscript-badge">
+    Manuscript in preparation
+  </span>
+
+</div>
