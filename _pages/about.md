@@ -14,7 +14,6 @@ redirect_from:
     --port-muted: #64748b;
     --port-bg: #ffffff;
     --port-border: #e5e7eb;
-    --accent-color: #f0f7ff;
   }
 
   /* ================================
@@ -59,7 +58,7 @@ redirect_from:
   .content-text {
     margin-bottom: 20px;
 
-    color: var(--port-text);
+    color: var(--port-text) !important;
     font-size: 0.95em;
     line-height: 1.7;
 
@@ -86,7 +85,7 @@ redirect_from:
     padding: 6px 14px;
 
     background-color: var(--port-primary);
-    color: #ffffff;
+    color: #ffffff !important;
 
     border-radius: 4px;
 
@@ -96,54 +95,50 @@ redirect_from:
   }
 
   /* ================================
-     Dark mode
+     DARK MODE
      ================================ */
 
-  @media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] {
+    --port-primary: #9ec5ff;
+    --port-text: #e5e7eb;
+    --port-muted: #a0aec0;
+    --port-bg: #111827;
+    --port-border: #374151;
+  }
 
-    :root {
-      --port-primary: #9ec5ff;
-      --port-text: #e5e7eb;
-      --port-muted: #a0aec0;
-      --port-bg: #111827;
-      --port-border: #374151;
-      --accent-color: #1f2937;
-    }
+  html[data-theme="dark"] body {
+    background-color: #111827 !important;
+    color: #e5e7eb !important;
+  }
 
-    body {
-      background-color: #111827 !important;
-      color: #e5e7eb !important;
-    }
+  html[data-theme="dark"] .page__content {
+    background-color: #111827 !important;
+    color: #e5e7eb !important;
+  }
 
-    .page__content {
-      color: #e5e7eb !important;
-    }
+  html[data-theme="dark"] .page__title {
+    color: #9ec5ff !important;
+  }
 
-    .page__title {
-      color: #9ec5ff !important;
-    }
+  html[data-theme="dark"] .section-title {
+    color: #9ec5ff !important;
+    border-bottom-color: #374151 !important;
+  }
 
-    .section-title {
-      color: #9ec5ff !important;
-      border-bottom-color: #374151;
-    }
+  html[data-theme="dark"] .content-text {
+    color: #e5e7eb !important;
+  }
 
-    .content-text {
-      color: #e5e7eb !important;
-    }
-
-    .pill {
-      background-color: #263b55;
-      color: #e5e7eb;
-    }
+  html[data-theme="dark"] .pill {
+    background-color: #263b55 !important;
+    color: #e5e7eb !important;
   }
 
   /* ================================
-     Mobile
+     MOBILE
      ================================ */
 
   @media (max-width: 768px) {
-
     .content-text {
       text-align: left;
     }
