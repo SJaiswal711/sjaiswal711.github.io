@@ -12,121 +12,149 @@ redirect_from:
     --port-primary: #2c3e50;
     --port-text: #3b3b3b;
     --port-muted: #64748b;
-    --port-bg: #fdfdfd;
-    --port-border: #eaeaea;
+    --port-bg: #ffffff;
+    --port-border: #e5e7eb;
     --accent-color: #f0f7ff;
   }
 
-  /* Dark mode */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --port-primary: #8ab4f8;
-      --port-text: #e5e7eb;
-      --port-muted: #a0aec0;
-      --port-bg: #1a1a1a;
-      --port-border: #333333;
-      --accent-color: #243447;
-    }
+  /* ================================
+     Page
+     ================================ */
 
-    body {
-      background: #111111 !important;
-      color: var(--port-text) !important;
-    }
-
-    .masthead,
-    .masthead__inner-wrap,
-    .masthead__menu,
-    .masthead__menu ul,
-    .greedy-nav {
-      background: #111111 !important;
-    }
-
-    .masthead a,
-    .masthead__menu-item a,
-    .greedy-nav a {
-      color: var(--port-text) !important;
-    }
+  body {
+    background-color: var(--port-bg);
+    color: var(--port-text);
   }
 
-  /* Header */
-  .masthead {
-    border-bottom: 1px solid var(--port-border) !important;
+  .page__content {
+    color: var(--port-text);
   }
 
-  .masthead,
-  .masthead__inner-wrap,
-  .masthead__menu,
-  .masthead__menu ul,
-  .greedy-nav {
-    background-color: var(--port-bg) !important;
-  }
-
-  .masthead a,
-  .masthead__menu-item a,
-  .greedy-nav a {
-    background: transparent !important;
-    color: var(--port-text) !important;
-  }
-
-  .masthead a:hover,
-  .greedy-nav a:hover {
-    color: var(--port-primary) !important;
-  }
-
-  /* Page title */
   .page__title {
     color: var(--port-primary) !important;
     font-weight: 700 !important;
   }
 
-  /* Section headings */
+  /* ================================
+     Section headings
+     ================================ */
+
   .section-title {
     margin-top: 45px;
-    border-bottom: 1px solid var(--port-border);
+    margin-bottom: 20px;
     padding-bottom: 8px;
-    text-transform: uppercase;
+    border-bottom: 1px solid var(--port-border);
+
     color: var(--port-primary) !important;
     font-size: 1.15em !important;
-    letter-spacing: 0.1em;
     font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
-  /* Main text */
+  /* ================================
+     Main text
+     ================================ */
+
   .content-text {
-    text-align: justify;
-    text-justify: inter-word;
+    margin-bottom: 20px;
+
+    color: var(--port-text);
     font-size: 0.95em;
     line-height: 1.7;
-    margin-bottom: 20px;
-    color: var(--port-text);
+
+    text-align: justify;
+    text-justify: inter-word;
   }
 
-  /* Research interest pills */
+  /* ================================
+     Research-interest pills
+     ================================ */
+
   .interest-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
     margin-top: 15px;
     margin-bottom: 30px;
   }
 
   .pill {
+    display: inline-block;
+
+    padding: 6px 14px;
+
     background-color: var(--port-primary);
     color: #ffffff;
+
+    border-radius: 4px;
+
     font-size: 0.85em;
     font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 4px;
     letter-spacing: 0.03em;
   }
 
+  /* ================================
+     Dark mode
+     ================================ */
+
+  @media (prefers-color-scheme: dark) {
+
+    :root {
+      --port-primary: #9ec5ff;
+      --port-text: #e5e7eb;
+      --port-muted: #a0aec0;
+      --port-bg: #111827;
+      --port-border: #374151;
+      --accent-color: #1f2937;
+    }
+
+    body {
+      background-color: #111827 !important;
+      color: #e5e7eb !important;
+    }
+
+    .page__content {
+      color: #e5e7eb !important;
+    }
+
+    .page__title {
+      color: #9ec5ff !important;
+    }
+
+    .section-title {
+      color: #9ec5ff !important;
+      border-bottom-color: #374151;
+    }
+
+    .content-text {
+      color: #e5e7eb !important;
+    }
+
+    .pill {
+      background-color: #263b55;
+      color: #e5e7eb;
+    }
+  }
+
+  /* ================================
+     Mobile
+     ================================ */
+
   @media (max-width: 768px) {
+
     .content-text {
       text-align: left;
     }
 
     .interest-pills {
       gap: 7px;
+    }
+
+    .pill {
+      font-size: 0.8em;
+      padding: 5px 11px;
     }
   }
 </style>
@@ -150,7 +178,7 @@ redirect_from:
 <h2 class="section-title">Research Interests</h2>
 
 <div class="interest-pills">
-  <span class="pill">Cosmology & Astrophysics</span>
+  <span class="pill">Cosmology &amp; Astrophysics</span>
   <span class="pill">Early-Universe Cosmology</span>
   <span class="pill">Cosmic Microwave Background</span>
   <span class="pill">Large-Scale Structure</span>
