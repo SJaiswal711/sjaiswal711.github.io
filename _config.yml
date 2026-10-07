@@ -1,160 +1,327 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
+# This config file is meant for settings that affect your entire site.
+# Values here are generally set once and changed only occasionally.
 
-# Basic Site Settings
+# =========================================================
+# BASIC SITE SETTINGS
+# =========================================================
+
 locale                   : "en-US"
 site_theme               : "default"
+
 title                    : "Shambhavi Jaiswal"
-title_separator          : "-"
+title_separator          : "|"
+
 name                     : &name "Shambhavi Jaiswal"
-description              : &description "Cosmology, astrophysics, Bayesian inference, and scientific machine learning"
+
+description              : &description "Cosmology and astrophysics | Early-Universe cosmology | Cosmological probes | Bayesian inference | Scientific computing"
+
 url                      : "https://sjaiswal711.github.io"
 baseurl                  : ""
+
 repository               : "SJaiswal711/sjaiswal711.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
+
+# =========================================================
+# SITE AUTHOR
+# =========================================================
+
 author:
+
+  # -------------------------------------------------------
+  # Biographical information
+  # -------------------------------------------------------
+
   avatar           : "profile.png"
+
   name             : "Shambhavi Jaiswal"
-  description      : "Cosmology, astrophysics, and scientific research"
-  pronouns         : "She/Her"
-  bio              : "Interested in Bayesian inference, cosmology, astrophysics, exoplanetary science, and machine learning applications in scientific research."
+
+  description      : "Cosmology and astrophysics"
+
+  pronouns         : "she/her"
+
+  bio              : "Interested in cosmology, astrophysics, early-Universe cosmology, cosmological probes, Bayesian inference, and computational methods."
+
   location         : "India"
+
   employer         :
-  uri              :
+
+  uri              : "https://sjaiswal711.github.io"
+
   email            : "sjaiswal0711@gmail.com"
 
-  # Academic websites
-  academia         : 
+
+  # -------------------------------------------------------
+  # Academic profiles
+  # -------------------------------------------------------
+
+  academia         :
+
   arxiv            : "SJaiswal"
+
   googlescholar    : "tVmVtiIAAAAJ"
-  impactstory      : 
+
+  inspire-hep      :
+
+  impactstory      :
+
   orcid            : "0009-0007-0298-5455"
-  semantic         : 
-  pubmed           : 
-  researchgate     : 
-  scopus           : 
 
-  # Repositories and software development
-  bitbucket        : 
-  codepen          : 
-  dribbble         : 
+  semantic         :
+
+  ssrn             :
+
+  pubmed           :
+
+  researchgate     :
+
+  scopus           :
+
+  zotero           :
+
+
+  # -------------------------------------------------------
+  # Repositories / Software
+  # -------------------------------------------------------
+
+  bitbucket        :
+
+  codepen          :
+
+  dribbble         :
+
   github           : "sjaiswal711"
-  kaggle           : 
-  stackoverflow    : 
 
-  # Social media
-  artstation       : 
-  bluesky          : 
-  facebook         : 
-  flickr           : 
-  foursquare       : 
-  goodreads        : 
-  google_plus      : 
-  keybase          : 
-  instagram        : 
-  lastfm           : 
+  kaggle           :
+
+  stackoverflow    :
+
+
+  # -------------------------------------------------------
+  # Social / Professional
+  # -------------------------------------------------------
+
+  artstation       :
+
+  bluesky          :
+
+  facebook         :
+
+  flickr           :
+
+  foursquare       :
+
+  goodreads        :
+
+  google_plus      :
+
+  instagram        :
+
+  lastfm           :
+
+  keybase          :
+
   linkedin         : "shambhavi-jaiswal-52a29123a"
-  mastodon         : 
-  medium           : 
-  pinterest        : 
-  soundcloud       : 
-  steam            : 
-  telegram         : 
-  tumblr           : 
-  twitter          : 
-  vine             : 
-  weibo            : 
-  wikipedia        : 
-  xing             : 
-  youtube          : 
-  zhihu            : 
 
-# Publication Category - The following the list of publication categories and their headings
+  mastodon         :
+
+  medium           :
+
+  pinterest        :
+
+  soundcloud       :
+
+  steam            :
+
+  telegram         :
+
+  tumblr           :
+
+  twitter          :
+
+  vine             :
+
+  weibo            :
+
+  wikipedia        :
+
+  xing             :
+
+  youtube          :
+
+  zhihu            :
+
+
+# =========================================================
+# PUBLICATION CATEGORIES
+# =========================================================
+
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
 
-# Site Settings
-teaser                   :  
+  books:
+    title: "Books"
+
+  manuscripts:
+    title: "Journal Articles"
+
+  conferences:
+    title: "Conference Papers"
+
+
+# =========================================================
+# SITE SETTINGS
+# =========================================================
+
+teaser                   :
 breadcrumbs              : false
+
 words_per_minute         : 160
+
 future                   : true
-read_more                : "disabled" 
-talkmap_link             : false      
+
+read_more                : "disabled"
+
+talkmap_link             : false
+
+
+# =========================================================
+# COMMENTS
+# =========================================================
+
 comments:
-  provider               : 
+
+  provider               :
+
   disqus:
     shortname            :
+
   discourse:
-    server               : 
+    server               :
+
   facebook:
     appid                :
-    num_posts            : 
-    colorscheme          : 
+    num_posts            :
+    colorscheme          :
+
+
+# =========================================================
+# STATICMAN
+# =========================================================
+
 staticman:
+
   allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" 
+
+  branch                 : "gh-pages"
+
   commitMessage          : "New comment."
+
   filename               : comment-{@timestamp}
+
   format                 : "yml"
+
   moderation             : true
+
   path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
+
+  requiredFields        : ['name', 'email', 'message']
+
   transforms:
-    email                : "md5"
+    email:
+      : "md5"
+
   generatedFields:
+
     date:
       type               : "date"
-      options:
-        format           : "iso8601" 
-atom_feed:
-  hide                   : false     
-  path                   : 
 
-# SEO Related
+      options:
+        format           : "iso8601"
+
+
+# =========================================================
+# ATOM FEED
+# =========================================================
+
+atom_feed:
+
+  hide                   : false
+
+  path                   :
+
+
+# =========================================================
+# SEO / SEARCH ENGINE VERIFICATION
+# =========================================================
+
 google_site_verification :
+
 bing_site_verification   :
+
 alexa_site_verification  :
+
 yandex_site_verification :
 
-# Social Sharing
+
+# =========================================================
+# SOCIAL SHARING / PERSON IDENTITY
+# =========================================================
+
 twitter:
   username               : &twitter
+
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  
-og_description           :  
-social:
-  type                   : 
-  name                   : 
-  links: 
 
-# Analytics
+og_image                 : "/images/profile.png"
+
+og_description           : "Shambhavi Jaiswal — Cosmology and Astrophysics | Early-Universe cosmology | Cosmological probes | Bayesian inference | Scientific computing"
+
+
+# Structured social profiles
+social:
+
+  type                   : "Person"
+
+  name                   : "Shambhavi Jaiswal"
+
+  links:
+
+    - "https://sjaiswal711.github.io/"
+    - "https://github.com/SJaiswal711"
+    - "https://www.linkedin.com/in/shambhavi-jaiswal-52a29123a"
+    - "https://scholar.google.com/citations?user=tVmVtiIAAAAJ"
+    - "https://orcid.org/0009-0007-0298-5455"
+
+
+# =========================================================
+# ANALYTICS
+# =========================================================
+
 analytics:
-  provider               :  false 
+
+  provider               : false
+
   google:
     tracking_id          : ""
 
-# Reading Files
+
+# =========================================================
+# READING FILES
+# =========================================================
+
 include:
+
   - .htaccess
   - _pages
   - files
+
+
 exclude:
+
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -162,9 +329,11 @@ exclude:
   - .github
   - .jekyll-assets-cache
   - .sass-cache
+
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
+
   - CHANGELOG
   - Capfile
   - config
@@ -181,51 +350,94 @@ exclude:
   - README
   - tmp
   - vendor
+
+
 keep_files:
+
   - .git
   - .svn
+
+
 encoding: "utf-8"
+
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Conversion
+
+# =========================================================
+# CONVERSION
+# =========================================================
+
 markdown: kramdown
+
 highlighter: rouge
+
 lsi: false
+
 excerpt_separator: "\n\n"
+
 incremental: false
 
-# Markdown Processing
+
+# =========================================================
+# MARKDOWN PROCESSING
+# =========================================================
+
 kramdown:
+
   input: GFM
+
   hard_wrap: false
+
   auto_ids: true
+
   footnote_nr: 1
+
   entity_output: as_char
+
   toc_levels: 1..6
+
   smart_quotes: lsquo,rsquo,ldquo,rdquo
+
   enable_coderay: false
 
-# These settings control the types of collections used by the template
+
+# =========================================================
+# COLLECTIONS
+# =========================================================
+
 collections:
+
   teaching:
     output: true
     permalink: /:collection/:path/
+
   publications:
     output: true
     permalink: /:collection/:path/
+
   portfolio:
     output: true
     permalink: /:collection/:path/
+
   talks:
     output: true
     permalink: /:collection/:path/
 
-# These settings control how pages and collections are included in the site
+
+# =========================================================
+# DEFAULTS
+# =========================================================
+
 defaults:
-  # _posts
+
+  # -------------------------------------------------------
+  # Posts
+  # -------------------------------------------------------
+
   - scope:
       path: ""
       type: posts
+
     values:
       layout: single
       author_profile: true
@@ -233,60 +445,106 @@ defaults:
       comments: true
       share: true
       related: true
-  # _pages
+
+
+  # -------------------------------------------------------
+  # Pages
+  # -------------------------------------------------------
+
   - scope:
       path: ""
       type: pages
+
     values:
       layout: single
       author_profile: true
-  # _teaching
+
+
+  # -------------------------------------------------------
+  # Teaching
+  # -------------------------------------------------------
+
   - scope:
       path: ""
       type: teaching
+
     values:
       layout: single
       author_profile: true
       share: true
       comments: true
-  # _publications
+
+
+  # -------------------------------------------------------
+  # Publications
+  # -------------------------------------------------------
+
   - scope:
       path: ""
       type: publications
+
     values:
       layout: single
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+
+
+  # -------------------------------------------------------
+  # Portfolio / Research
+  # -------------------------------------------------------
+
   - scope:
       path: ""
       type: portfolio
+
     values:
       layout: single
       author_profile: true
       share: true
       comment: true
-  # _talks
+
+
+  # -------------------------------------------------------
+  # Talks
+  # -------------------------------------------------------
+
   - scope:
       path: ""
       type: talks
+
     values:
       layout: talk
       author_profile: true
       share: true
 
-# Sass/SCSS
+
+# =========================================================
+# SASS / SCSS
+# =========================================================
+
 sass:
+
   sass_dir: _sass
+
   style: compressed
 
-# Outputting
+
+# =========================================================
+# OUTPUT
+# =========================================================
+
 permalink: /:categories/:title/
-timezone: Etc/UTC 
 
-# Plugins
+timezone: Etc/UTC
+
+
+# =========================================================
+# PLUGINS
+# =========================================================
+
 plugins:
+
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
@@ -294,8 +552,13 @@ plugins:
   - jekyll-redirect-from
   - jemoji
 
-# Mimic GitHub Pages with --safe
+
+# =========================================================
+# GITHUB PAGES WHITELIST
+# =========================================================
+
 whitelist:
+
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
@@ -303,16 +566,32 @@ whitelist:
   - jekyll-redirect-from
   - jemoji
 
-# Archives
+
+# =========================================================
+# ARCHIVES
+# =========================================================
+
 category_archive:
+
   type: liquid
+
   path: /categories/
+
+
 tag_archive:
+
   type: liquid
+
   path: /tags/
 
-# HTML Compression
+
+# =========================================================
+# HTML COMPRESSION
+# =========================================================
+
 compress_html:
+
   clippings: all
+
   ignore:
     envs: development
